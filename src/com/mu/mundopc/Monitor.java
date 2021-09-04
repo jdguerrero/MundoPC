@@ -1,23 +1,51 @@
-package mundopc;
+package com.mu.mundopc;
 
 public class Monitor {
 
-    private int idMonitor;
+    private final int idMonitor;
 
     private String marca;
 
     private double tamano;
 
-    private int contadorMonitores;
+    private static int contadorMonitores;
 
-    public Monitor (){
-
+    private Monitor (){
+        this.idMonitor=Monitor.contadorMonitores;
     }
 
     public Monitor(String marca, double tamano){
-        this.contadorMonitores++;
+        this();//inicializa variable idMonitor llamando el constructor anterior
         this.marca = marca;
         this.tamano=tamano;
+    }
+
+    public int getIdMonitor() {
+        return idMonitor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public double getTamano() {
+        return tamano;
+    }
+
+    public void setTamano(double tamano) {
+        this.tamano = tamano;
+    }
+
+    public int getContadorMonitores() {
+        return contadorMonitores;
+    }
+
+    public void setContadorMonitores(int contadorMonitores) {
+        this.contadorMonitores = contadorMonitores;
     }
 
     @Override
